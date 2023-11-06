@@ -1,0 +1,28 @@
+<h2>login</h2>
+
+<form action="/v1/user/login" method="post">
+
+<%if(messages.error){%>
+
+<span style="color: red">
+
+<%=messages.error%>
+</span>
+
+<%}%>
+
+<div>
+    <label for="email">EMAIL</label>
+    <input type="email" id="email" name="email" required>
+</div>
+
+<div>
+    <label for="password">PASSWORD</label>
+    <input type="password" id="password" name="password" required>
+</div>
+
+<div>
+    <input type="submit" value="login">
+</div>
+
+</form>
