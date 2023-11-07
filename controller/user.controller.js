@@ -96,16 +96,13 @@ async function Login(req, res) {
             }
         })
 
-        // console.log(checkUser)
-
-        // if (user == null) {
-        //     res.status(400).json({
-        //         data: null,
-        //         status: 400,
-        //         message: "email is not found or incorrect"
-        //     })
-        // }
-        console.log(checkUser.password, password)
+        if (user == null) {
+            res.status(400).json({
+                data: null,
+                status: 400,
+                message: "email is not found or incorrect"
+            })
+        }
 
         const checkPassword = await ComparePassword(password, checkUser.password)
 
